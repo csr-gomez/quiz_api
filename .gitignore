@@ -1,0 +1,5 @@
+db.sqlite3
+quizenv
+quiz/__pycache__
+quiz/migrations
+config/__pycache__
