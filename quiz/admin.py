@@ -16,7 +16,7 @@ class QuizAdminForm(forms.ModelForm):
     
     questions = forms.ModelMultipleChoiceField(
         queryset=Question.objects.all(),
-        required=True,
+        required=False,
         label='Questions',
         widget=FilteredSelectMultiple(
             verbose_name='questions',
