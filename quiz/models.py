@@ -41,7 +41,7 @@ class Question(models.Model):
         'Subject', blank=False, null=True, on_delete=models.SET_NULL
     )
     quiz = models.ManyToManyField(
-        'Quiz', blank=False
+        'Quiz', blank=False, related_name='questions'
     )
 
     class Meta:
@@ -60,8 +60,12 @@ class Choice(models.Model):
         blank=False, null=False
     )
     question = models.ForeignKey(
-        'Question', null=False, blank=False, on_delete=models.CASCADE
+        'Question', 
+        related_name='choices', 
+        null=False, 
+        blank=False, 
+        on_delete=models.CASCADE
     )
 
     def __str__(self):
-        return self.content
+        return self.text
